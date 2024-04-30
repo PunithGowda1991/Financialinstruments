@@ -9,45 +9,45 @@ function App() {
   const [renderData, setRenderData] = useState([]);
   const [sortField, setSortField] = useState();
 
-  useEffect(()=> {
+  useEffect(() => {
     setRenderData(mockData);
-  },[])
+  }, [])
 
   const sortBy = (key) => {
     setSortField(key)
     let tableDataCopy = [...renderData];
     tableDataCopy.sort(comapreBy(key));
     setRenderData(tableDataCopy);
-}
-
-const comapreBy = key => {
-  switch(key) {
-    case TICKER :
-      return (a, b) => {
-        if (a[key] < b[key]) return -1;
-        if (a[key] > b[key]) return 1;
-        return 0;
-      };
-    case PRICE :
-      return (a, b) => {
-        if (a[key] < b[key]) return -1;
-        if (a[key] > b[key]) return 1;
-        return 0;
-      };
-    case ASSET_CLASS :
-      const sortOrder = ['Commodities', 'Equities', 'Credit']
-      return (a, b) => {
-        return sortOrder.indexOf(a.assetClass) - sortOrder.indexOf(b.assetClass)
-      };
-    default :
-      return 0
   }
-};
+
+  const comapreBy = key => {
+    switch (key) {
+      case TICKER:
+        return (a, b) => {
+          if (a[key] < b[key]) return -1;
+          if (a[key] > b[key]) return 1;
+          return 0;
+        };
+      case PRICE:
+        return (a, b) => {
+          if (a[key] < b[key]) return -1;
+          if (a[key] > b[key]) return 1;
+          return 0;
+        };
+      case ASSET_CLASS:
+        const sortOrder = ['Commodities', 'Equities', 'Credit']
+        return (a, b) => {
+          return sortOrder.indexOf(a.assetClass) - sortOrder.indexOf(b.assetClass)
+        };
+      default:
+        return 0
+    }
+  };
 
   return (
     <div className='App-container'>
       {renderData.length > 0 &&
-      <FinancialInstrumentTable tableData={renderData} sortBy={sortBy} sortField={sortField}/> }
+        <FinancialInstrumentTable tableData={renderData} sortBy={sortBy} sortField={sortField} />}
     </div>
   );
 }

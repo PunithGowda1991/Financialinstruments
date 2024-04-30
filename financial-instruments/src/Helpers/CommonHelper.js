@@ -1,4 +1,4 @@
-export const headerNames= {
+export const headerNames = {
     ticker: 'Ticker',
     price: 'Price',
     assetClass: 'Asset Class'
@@ -13,3 +13,6 @@ export const assetClassColorMapping = {
     Equities: 'lightblue',
     Commodities: 'whitesmoke'
 }
+
+export const BLUE = 'lightblue'
+export const RED = 'lightcoral'
