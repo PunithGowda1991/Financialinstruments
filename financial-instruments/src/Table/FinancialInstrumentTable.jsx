@@ -4,15 +4,15 @@ import './FinancialInstrumentTable.css'
 import { AssetClass } from '../Components/AssetClass';
 
 const FinancialInstrumentTable = ({ tableData = [], sortBy, sortField }) => {
-    const tableHeaders = Object.keys(tableData[0]).map(header => header)
+    const tableHeaders = tableData.length > 0 ? Object.keys(tableData[0]).map(header => header) : []
     const renderTableData = () => {
         return (
             tableData.map(item => {
                 return (
                     <tr>
-                        {Object.keys(item).map(el => {
+                        {Object.keys(item).map((el, index) => {
                             return (
-                                <td><AssetClass assetName={el} assetValue={item[el]}>{item[el]}</AssetClass></td>
+                                <td key={index}><AssetClass assetName={el} assetValue={item[el]}>{item[el]}</AssetClass></td>
                             )
                         })}
                     </tr>
@@ -25,9 +25,9 @@ const FinancialInstrumentTable = ({ tableData = [], sortBy, sortField }) => {
         <table>
             <thead>
                 <tr>
-                    {tableHeaders.map(item => {
+                    {tableHeaders.map((item, index) => {
                         return (
-                            <th key={item} onClick={() => sortBy(item)}>
+                            <th data-testid='header' key={item} onClick={() => sortBy(item)}>
                                 <div>
                                     {headerNames[item]}
                                     {item === sortField &&

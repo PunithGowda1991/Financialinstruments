@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { mockData } from './Data/FinancialInstrumentsMockdata'
 import { compareBy } from './Helpers/CommonHelper';
-
 import FinancialInstrumentTable from './Table/FinancialInstrumentTable'
 
 function App() {

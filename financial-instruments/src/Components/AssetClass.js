@@ -11,10 +11,10 @@ export const AssetClass = style.div`
     height: 20px;
     padding-top: 9px;
     background: ${(props) => {
-        switch(props.assetName){
-            case PRICE :
+        switch (props.assetName) {
+            case PRICE:
                 return props.assetValue > 0 ? BLUE : RED
-            case ASSET_CLASS :
+            case ASSET_CLASS:
                 return assetClassColorMapping[props.assetValue]
         }
     }}
