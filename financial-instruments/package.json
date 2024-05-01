@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -16,6 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --env=jsdom --watchAll=false --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -24,19 +24,11 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ],
-    "resolutions": {
-      "styled-components": "^5"
-    }
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "browserslist": [],
+  "devDependencies": {
+    "@testing-library/react": "^15.0.5"
   }
 }
