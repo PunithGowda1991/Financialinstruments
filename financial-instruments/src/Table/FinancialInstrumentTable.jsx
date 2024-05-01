@@ -5,7 +5,6 @@ import { AssetClass } from '../Components/AssetClass';
 
 const FinancialInstrumentTable = ({ tableData = [], sortBy, sortField }) => {
     const tableHeaders = Object.keys(tableData[0]).map(header => header)
-
     const renderTableData = () => {
         return (
             tableData.map(item => {

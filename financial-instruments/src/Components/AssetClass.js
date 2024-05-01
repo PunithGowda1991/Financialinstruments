@@ -4,9 +4,11 @@ import { assetClassColorMapping } from '../Helpers/CommonHelper'
 
 export const AssetClass = style.div`
     border-radius: 100px;
-    width: 100px;
+    max-width: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     height: 20px;
-    padding-left: 30px;
     padding-top: 9px;
     background: ${(props) => {
         switch(props.assetName){

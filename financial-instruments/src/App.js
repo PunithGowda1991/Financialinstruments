@@ -16,11 +16,11 @@ function App() {
   const sortBy = (key) => {
     setSortField(key)
     let tableDataCopy = [...renderData];
-    tableDataCopy.sort(comapreBy(key));
+    tableDataCopy.sort(compareBy(key));
     setRenderData(tableDataCopy);
   }
 
-  const comapreBy = key => {
+  const compareBy = key => {
     switch (key) {
       case TICKER:
         return (a, b) => {
