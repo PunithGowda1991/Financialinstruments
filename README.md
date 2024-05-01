@@ -1,8 +1,9 @@
 # Steps to run the project
-1. clone the repo https://github.com/PunithGowda1991/Financialinstruments in IDE
+1. Clone the repo https://github.com/PunithGowda1991/Financialinstruments in IDE
 2. Go inside financial-instruments
-3. open a terminal and npm install
-4. open a terminal and type: npm start
+3. open a terminal and type 'npm install' and wait for it to finish
+4. open a terminal and type 'npm start' and wait for it to finish
+5. Open http://localhost:3000 in browser to view the project
 
 ### `npm install`
 
