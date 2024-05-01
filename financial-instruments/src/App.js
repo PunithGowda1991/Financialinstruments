@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div className='App-container'>
+    <div>
       {renderData.length > 0 &&
         <FinancialInstrumentTable tableData={renderData} sortBy={sortBy} sortField={sortField} />}
     </div>
