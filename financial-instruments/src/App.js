@@ -25,13 +25,11 @@ function App() {
       case TICKER:
         return (a, b) => {
           if (a[key] < b[key]) return -1;
-          if (a[key] > b[key]) return 1;
           return 0;
         };
       case PRICE:
         return (a, b) => {
           if (a[key] < b[key]) return -1;
-          if (a[key] > b[key]) return 1;
           return 0;
         };
       case ASSET_CLASS:

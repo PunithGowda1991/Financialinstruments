@@ -1,5 +1,5 @@
 import React from 'react';
-import { headerNames, assetClassColorMapping, BLUE, RED } from '../Helpers/CommonHelper';
+import { headerNames } from '../Helpers/CommonHelper';
 import './FinancialInstrumentTable.css'
 import { AssetClass } from '../Components/AssetClass';
 
@@ -9,12 +9,13 @@ const FinancialInstrumentTable = ({ tableData = [], sortBy, sortField }) => {
     const renderTableData = () => {
         return (
             tableData.map(item => {
-                const { ticker, price, assetClass } = item
                 return (
                     <tr>
-                        <td><div>{ticker}</div></td>
-                        <td><AssetClass color={price > 0 ? BLUE : RED}>{price}</AssetClass></td>
-                        <td><AssetClass color={assetClassColorMapping[assetClass]}>{assetClass}</AssetClass></td>
+                        {Object.keys(item).map(el => {
+                            return (
+                                <td><AssetClass assetName={el} assetValue={item[el]}>{item[el]}</AssetClass></td>
+                            )
+                        })}
                     </tr>
                 )
             })
